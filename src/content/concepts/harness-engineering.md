@@ -13,7 +13,7 @@ relatedIds:
   - concepts/model-context-protocol
 status: "Experimental"
 publishedDate: 2026-05-20
-lastUpdated: 2026-05-20
+lastUpdated: 2026-10-01
 references:
   - type: "website"
     title: "The Agent Harness"
@@ -34,6 +34,13 @@ references:
     author: "Hangfan Zhang, Shao Zhang, Kangcong Li, et al."
     published: "2026-06-08"
     annotation: "Introduces the Self-Harness loop for model-specific harness self-improvement, verifying edits using regression gates on held-out tasks."
+  - type: "website"
+    title: "Coding Is No Longer the Constraint: Scaling Developer Experience to Teams and Agents at Spotify"
+    author: "Spotify Engineering (Niklas Gustavsson)"
+    url: "https://engineering.atspotify.com/2026/6/code-with-claude-coding-is-no-longer-the-constraint"
+    published: 2026-06-03
+    accessed: 2026-09-30
+    annotation: "Describes Honk, a background coding agent running Claude via the Agent SDK inside Spotify's own harness, with CI builds across operating systems and lint feedback acting as sensors that trigger self-correction. First-party account from a vendor-event talk."
 ---
 
 ## Definition
@@ -53,7 +60,7 @@ While the model provides the raw intelligence and reasoning, the harness provide
 ### 1. Guides vs. Sensors
 The harness influences the model through two distinct vectors:
 * **Guides (Feed-forward):** Instructions, types, schemas, system prompts, and constraints that steer the agent's behavior *before* it acts.
-* **Sensors (Feedback):** Automated tests, compiler checks, linters, or evaluation metrics that observe the agent's output *after* execution, feeding warnings back into the loop to trigger self-correction before human intervention is required.
+* **Sensors (Feedback):** Automated tests, compiler checks, linters, or evaluation metrics that observe the agent's output *after* execution, feeding warnings back into the loop to trigger self-correction before human intervention is required. Spotify's Honk agent is a production example: it runs Claude inside Spotify's own harness with CI builds across multiple operating systems as a verification tool, and lint rules encoding the organization's recommended patterns give the agent immediate feedback it corrects against. Spotify calls these "active guardrails"; in ASDLC vocabulary they are deterministic [Context Gates](/patterns/context-gates), not probabilistic steering.
 
 ### 2. "On the Loop" vs. "In the Loop"
 In a harness-engineered system, the developer's role shifts:

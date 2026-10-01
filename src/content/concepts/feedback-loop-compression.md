@@ -17,7 +17,7 @@ relatedIds:
   - concepts/theory-of-llm-constraints
   - concepts/compound-engineering
 status: "Experimental"
-lastUpdated: 2026-05-20
+lastUpdated: 2026-10-01
 references:
   - type: "website"
     title: "\"You Had One Job\": Why Twenty Years of DevOps Has Failed to Do it"
@@ -35,11 +35,11 @@ references:
     annotation: "Applies Goldratt's Theory of Constraints to LLM-augmented delivery; synthesizes Faros, Thoughtworks, DORA, and METR telemetry."
   - type: "website"
     title: "How much faster can coding assistants really make software delivery?"
-    author: "Thoughtworks"
+    author: "Sichu Zhang (Thoughtworks)"
     url: "https://www.thoughtworks.com/en-us/insights/blog/generative-ai/how-faster-coding-assistants-software-delivery"
-    published: 2025-02-01
-    accessed: 2026-05-18
-    annotation: "Empirical decomposition: ~30% coding acceleration yields ~8% net delivery improvement."
+    published: 2025-02-18
+    accessed: 2026-10-01
+    annotation: "Client case using estimated task savings and a cycle-time heuristic: ~30% estimated coding-task improvement yields ~8% estimated cycle-time improvement. Team estimates, not measured telemetry."
 ---
 
 ## Definition
@@ -53,7 +53,7 @@ The compression is asymmetric: AI has made the *Act* phase (code generation) nea
 
 ## The Shift in Constraints
 
-This shift is analyzed in [Theory of LLM Constraints](/concepts/theory-of-llm-constraints) and grounded in empirical telemetry: localized coding acceleration (~30%, per Thoughtworks) yields only a marginal net delivery improvement (~8%) because the bottleneck shifts downstream.
+This shift is analyzed in [Theory of LLM Constraints](/concepts/theory-of-llm-constraints). Coding-task savings and end-to-end delivery gains are different measures: a Thoughtworks client case estimates that ~30% coding-task acceleration yields only ~8% cycle-time improvement, because coding was about half of the team's time. The case uses team estimates rather than measured telemetry, and it does not directly measure a downstream bottleneck; the limiting stage should be identified in the workflow being evaluated.
 
 | Era | Primary Bottleneck | Secondary Bottleneck |
 |-----|-------------------|----------------------|

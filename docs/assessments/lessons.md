@@ -35,3 +35,7 @@ This document records crystallized heuristics and lessons learned from past cont
 ### 8. Assessor Count Is an Operating Profile, Not Evidence
 - **Lesson:** Do not encode a current multi-assessor configuration as a universal epistemic rule. Route independent review by change risk and unresolved uncertainty, and treat model agreement as consistency rather than correctness. Record the reviewer profile for provenance; require evidence or an independent anchor for the underlying claim.
 - **Reference:** [Academic Editorial Pipeline Assessment](/docs/assessments/2026-08-25-academic-editorial-pipeline) (2026-08-25)
+
+### 9. Corroboration Triggers Incumbent Citation Re-Verification
+- **Lesson:** When a challenger corroborates an incumbent claim, re-verify the incumbent's existing citations (URL, byline, date, method label, metric definition) before adding the new reference. Corroboration is the moment an overstated sentence is most likely to be reinforced rather than examined. The Spotify pass found a drifted Faros URL, a consultancy estimate labelled "empirical telemetry", a METR result stated without its temporal bound, and a categorical "no net throughput improvement" sentence contradicted by its own next sentence — all in nodes the new source would have endorsed.
+- **Reference:** [Spotify Coding Constraint Assessment](/docs/assessments/2026-09-30-spotify-coding-constraint) (2026-10-01)

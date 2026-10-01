@@ -4,7 +4,7 @@ description: "Define agentic workflows in deterministic code rather than prompts
 tags: ["Orchestration", "Determinism", "TypeScript", "Automation"]
 relatedIds: ["patterns/context-gates", "patterns/ralph-loop", "patterns/model-routing", "concepts/model-context-protocol"]
 status: "Experimental"
-lastUpdated: 2026-02-18
+lastUpdated: 2026-10-01
 steps:
   - name: "Identify Deterministic vs Probabilistic Tasks"
     text: "Audit your workflow and separate mechanical tasks (running builds, parsing output, branching on conditions) from intelligence tasks (code review, summarization, decision-making under ambiguity). Only probabilistic tasks warrant an LLM call."
@@ -24,6 +24,13 @@ references:
     published: 2026-01-16
     accessed: 2026-01-18
     annotation: "Foundational article describing the shift from prompt-based to code-based orchestration."
+  - type: "website"
+    title: "Coding Is No Longer the Constraint: Scaling Developer Experience to Teams and Agents at Spotify"
+    author: "Spotify Engineering (Niklas Gustavsson)"
+    url: "https://engineering.atspotify.com/2026/6/code-with-claude-coding-is-no-longer-the-constraint"
+    published: 2026-06-03
+    accessed: 2026-09-30
+    annotation: "Production-scale instance of the deterministic/probabilistic split: Fleetshift keeps orchestration (targeting, scheduling, tracking) in code while the Honk agent performs the code modification and verifies it through CI. First-party account from a vendor-event talk."
 ---
 
 ## Definition
@@ -51,6 +58,8 @@ It treats the **Agent** as a function call within a larger, strongly-typed syste
 When complex workflows are driven entirely by an LLM loop ("Here is a goal, figure it out"), the system suffers from **Context Pollution**. As the agent accumulates history—observations, tool outputs, internal monologue—its attention degrades.
 
 Nick Tune describes this as the agent becoming "tipsy wobbling from side-to-side": it loses focus on strict process adherence because its context window is overflowing with implementation details.
+
+The split also holds in the other direction at production scale. Spotify's fleet-wide code migration system began as deterministic scripts and, by its own account, hit every corner case once run across thousands of components, so the code *modification* step was handed to an LLM agent (Honk). Orchestration stayed in code: Fleetshift identifies targets, schedules changes, and tracks which pull requests were created, merged, or need attention, while the agent verifies its edits by running builds in CI. The probabilistic step is bounded to the one task that resists deterministic scripting; everything around it remains typed, observable, and testable. Spotify attributes the arrangement's reliability to years of prior standardization, which is a prerequisite rather than a by-product.
 
 ## Process
 

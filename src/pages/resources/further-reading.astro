@@ -17,6 +17,16 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </p>
 
     <div class="feed-entry">
+      <h2>Coding Is No Longer the Constraint: Scaling Developer Experience to Teams and Agents at Spotify</h2>
+      <div class="meta">
+        <span><strong>Source:</strong> <a href="https://engineering.atspotify.com/2026/6/code-with-claude-coding-is-no-longer-the-constraint" target="_blank" rel="noopener">Spotify Engineering, Niklas Gustavsson (June 2026)</a></span>
+      </div>
+      <p>
+        A recap of Spotify's Code with Claude talk. Spotify reports near-universal adoption of AI coding tools, 76% more pull requests, and a constraint that has moved from writing code to reviewing, planning, and prioritizing it. The operational detail is the useful part: deterministic fleet-migration scripts broke at corner cases, so the code modification step was handed to a background agent (Honk) running Claude inside Spotify's own harness with CI as its verification tool, while orchestration stayed in code (Fleetshift). Backstage is exposed to agents as MCP servers and CLI tools, and lint rules encoding the recommended patterns give the agent immediate feedback. Spotify's September retrospective adds the boundary: merged changes roughly doubled with no rise in rework rate so far, but complexity and PR size are creeping up and some auto-merged fleet updates passed checks and failed in production. In the ASDLC, we cite this as a first-party illustration of the <a href="/concepts/theory-of-llm-constraints">Theory of LLM Constraints</a>, a production instance of <a href="/practices/workflow-as-code">Workflow as Code</a>, a sensor example in <a href="/concepts/harness-engineering">Harness Engineering</a>, and the platform-as-context case in <a href="/concepts/context-engineering">Context Engineering</a>. Figures are self-reported and the talk was given at a vendor event; the 2.5 million auto-merged maintenance PRs belong to a deterministic program that predates agents and say nothing about auto-merging LLM-authored code.
+      </p>
+    </div>
+
+    <div class="feed-entry">
       <h2>Expert Personas Improve LLM Alignment but Damage Accuracy</h2>
       <div class="meta">
         <span><strong>Source:</strong> <a href="https://arxiv.org/abs/2603.18507" target="_blank" rel="noopener">Lijie Hu, Mohammad Rostami, Jesse Thomason (arXiv, March 2026)</a></span>
@@ -83,11 +93,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </div>
       <p>
         Ljunggren reframes the LLM productivity paradox in the language of Goldratt's <em>Theory of Constraints</em>:
-        localized coding acceleration (~30%, per Thoughtworks) yields only marginal net delivery improvement (~8%)
-        because the bottleneck shifts downstream. Faros AI telemetry across 10,000+ developers reports 98% more PRs
-        merged and 91% longer review wait times; DORA 2025 publishes the first official benchmarks for Deployment
-        Rework Rate as the quality-leakage counterpart to PR Cycle Time. The article grounds the ASDLC bottleneck-shift
-        thesis in named theory and empirical evidence; the ASDLC position adapts Ljunggren's prescriptive
+        a Thoughtworks client case estimates that ~30% coding-task acceleration yields only ~8% cycle-time improvement
+        because the bottleneck shifts downstream. Faros AI telemetry across 10,000+ developers reports a correlation between
+        AI adoption and 98% more PRs merged with 91% longer review times; DORA 2025 publishes the first official benchmarks for Deployment
+        Rework Rate as the quality-leakage counterpart to PR Cycle Time. The article gives the ASDLC bottleneck-shift
+        thesis a named theory and a body of heterogeneous evidence; the ASDLC position adapts Ljunggren's prescriptive
         "Scaffolding-First" remediation into a <strong>Minimal Scaffolding-First</strong> stance — starting from a sensible
         minimal scaffold, but strictly avoiding overt scaffolding beyond that baseline unless gates earn their place by protecting against identified risks.
         See <a href="/concepts/theory-of-llm-constraints">Theory of LLM Constraints</a> for the dialectic.

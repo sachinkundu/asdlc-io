@@ -4,7 +4,7 @@ description: "Context Engineering is the practice of structuring information to 
 tags: ["AI", "LLM", "Prompt Engineering", "Context Engineering"]
 relatedIds: ["concepts/model-context-protocol", "practices/agents-md-spec", "patterns/context-gates", "concepts/4d-framework", "concepts/ooda-loop", "patterns/the-spec", "patterns/agent-optimization-loop", "patterns/context-map", "practices/context-offloading", "concepts/context-anchoring", "concepts/triple-debt-model", "concepts/compound-engineering", "concepts/react-pattern"]
 publishedDate: 2026-02-24
-lastUpdated: 2026-03-18
+lastUpdated: 2026-10-01
 status: "Live"
 references:
   - type: "website"
@@ -13,7 +13,21 @@ references:
     author: "David Tuite"
     published: 2026-03-12
     accessed: 2026-03-18
-    annotation: "Three-layer context model (Local/Repository/Organizational) with Spotify's Backstage-based implementation as case study. Product pitch for Roadie, but the layered framing and IDP-as-context-engine thesis are useful for enterprise audiences."
+    annotation: "Three-layer context model (Local/Repository/Organizational) with Spotify's Backstage-based implementation as case study. Product pitch for Roadie and a secondary account; see the Spotify Engineering references for the first-party description. The layered framing and IDP-as-context-engine thesis remain useful for enterprise audiences."
+  - type: "website"
+    title: "Coding Is No Longer the Constraint: Scaling Developer Experience to Teams and Agents at Spotify"
+    author: "Spotify Engineering (Niklas Gustavsson)"
+    url: "https://engineering.atspotify.com/2026/6/code-with-claude-coding-is-no-longer-the-constraint"
+    published: 2026-06-03
+    accessed: 2026-09-30
+    annotation: "First-party account of Backstage exposed to agents as MCP servers and CLI tools (component ownership, documentation, team contact), and of the reported observation that consistent codebases improve agent performance while fragmented ones are measurably worse. No comparative measurements published."
+  - type: "website"
+    title: "Background Coding Agents: Supercharging Downstream Consumer Dataset Migrations (Honk, Part 4)"
+    author: "Devon Edwards Joseph (Spotify Engineering)"
+    url: "https://engineering.atspotify.com/2026/4/background-coding-agents-dataset-migrations-honk-part-4"
+    published: 2026-04-22
+    accessed: 2026-10-01
+    annotation: "Boundary case for the consistency claim: Scio pipeline migrations were abandoned because framework variability made a comprehensive prompt unwieldy, explicit field-mapping tables replaced a repurposed migration guide, and repositories without build-time tests lost automated verification entirely."
   - type: "website"
     title: "OpenAI Best Practices for Prompt Engineering"
     url: "https://platform.openai.com/docs/guides/prompt-engineering"
@@ -108,6 +122,10 @@ While ASDLC focuses on software development, Context Engineering is domain-agnos
 * **In Design:** Design system tokens and Figma layer naming conventions fed to UI agents
 * **In Law:** Briefs restricting paralegal agents to specific case law precedents  
 * **In SDLC:** The `AGENTS.md` file steering agents toward implementation patterns
+
+### Organizational Context Through Platform Interfaces
+
+Organizational context can be served through the same interfaces an engineering organization already maintains for humans. Spotify reports exposing its Backstage software catalog to coding agents as [MCP](/concepts/model-context-protocol) servers and command-line tools, so an agent can look up who owns a component, read its documentation, or contact the responsible team. Spotify also reports that its long-standing standardization principle, "the fewer technologies we are world-leading in, the faster we go," carries over to agents: with consistent surrounding code the agent performs better, and in fragmented codebases it performs measurably worse. No comparative measurements are published, and the observation comes from an organization with years of platform investment. Spotify's own earlier migration account shows the boundary: migrations of its least standardized pipeline framework were abandoned because no manageable prompt could cover the variability, and repositories without build-time tests left the agent with no way to verify its work. Context availability and verification capacity are separate prerequisites, and a platform of this kind is an implementation example rather than a requirement.
 
 ### Screaming Architecture
 

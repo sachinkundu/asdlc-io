@@ -2,7 +2,7 @@
 name: assess
 description: "Assess source material against the ASDLC Knowledge Base and produce an evidence-calibrated Content Review Report."
 argument-hint: "[URL, text snippet, or prompt to assess]"
-version: 1.1.0
+version: 1.2.0
 ---
 
 # Assess — content engineering review
@@ -12,6 +12,8 @@ Assess source material against the ASDLC Knowledge Base and produce a traceable 
 ## Prime directive
 
 > **Burden of proof.** The Knowledge Base is the incumbent baseline. New content must show that it is more accurate or useful; do not accept a challenger merely because it is new.
+
+The incumbent is the comparison baseline, not presumed truth; re-check its supporting citations when the challenger reinforces the same claim.
 
 ## Boundaries
 
@@ -52,6 +54,14 @@ Drafts are gitignored and reviewers do not read one another's conclusions before
 3. For every material claim added, changed, or bounded, record a claim–evidence row with claim ID, type, supporting or conflicting evidence, appraisal, confidence, and editorial operation.
 4. Appraise evidence for the claim it supports. At Moderate risk, at least record method fit, directness, and precision; at High risk, also record provenance, bias, consistency, reproducibility, and currency when applicable.
 5. Use only `High`, `Moderate`, `Low`, or `Insufficient` for confidence, with a rationale. Do not treat assessor agreement as correctness.
+
+### Claim-calibration checkpoint
+
+Before synthesis, for each proposed material change:
+
+- Distinguish what the source observed from what we infer, hypothesize, or recommend; keep definitions identified as definitions.
+- Record the strongest relevant limitation, contrary finding, or alternative explanation in the claim–evidence row. State when none was found within the search scope.
+- Record proposed wording and its limits in that row, keeping the wording no stronger or broader than the evidence supports.
 
 ## Phase 3 — Synthesize and preserve disagreement
 

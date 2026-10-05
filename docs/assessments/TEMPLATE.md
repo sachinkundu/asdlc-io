@@ -44,9 +44,9 @@ assessment_date: "[YYYY-MM-DD]"
 
 ### Claim–Evidence Ledger
 
-| Claim ID | Claim | Type | Supporting or conflicting evidence | Appraisal | Confidence | Editorial operation |
-|---|---|---|---|---|---|---|
-| C1 | [Concise claim] | [definition | descriptive | causal | mechanistic | recommendation] | [Source and location] | [Method fit, directness, precision, etc.] | [High | Moderate | Low | Insufficient] | [retain | corroborate | bound | revise | supersede | split | reject] |
+| Claim ID | Claim | Type | Supporting or conflicting evidence | Appraisal | Confidence | Editorial operation | Proposed wording and limits |
+|---|---|---|---|---|---|---|---|
+| C1 | [Concise claim] | [definition / descriptive / causal / mechanistic / recommendation] | [Source and location] | [Method fit, directness, precision; strongest relevant limitation, contrary finding, or alternative explanation, or none found within search scope] | [High / Moderate / Low / Insufficient] | [retain / corroborate / bound / revise / supersede / split / reject] | [For proposed material changes: wording bounded by the evidence; distinguish observation, inference, hypothesis, recommendation, or definition] |
 
 ### Search and Selection Record
 

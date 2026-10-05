@@ -49,6 +49,7 @@ Invoke via `/command` or `.agents/skills/<name>/SKILL.md`. Full definitions live
 | assess | `/assess` | Content review & KB assessment against source material |
 | critic | `/critic` | Adversarial code review of changeset against contracts |
 | curator | `/curator` | Triage content corpus against GSC snapshot; refresh reports |
+| daily-pop-sdlc | `/daily-pop-sdlc` | One evidence-backed project question, followed by an authorized improvement |
 | dev | `/dev` | Implementation, bug fixes, validation loop |
 | geo-audit | `/geo-audit` | GEO+SEO audit of AI citability, schema, and MCP infrastructure |
 | lead | `/lead` | System design, specs, and Linear PBI authoring |

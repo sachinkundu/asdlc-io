@@ -39,3 +39,15 @@ This document records crystallized heuristics and lessons learned from past cont
 ### 9. Corroboration Triggers Incumbent Citation Re-Verification
 - **Lesson:** When a challenger corroborates an incumbent claim, re-verify the incumbent's existing citations (URL, byline, date, method label, metric definition) before adding the new reference. Corroboration is the moment an overstated sentence is most likely to be reinforced rather than examined. The Spotify pass found a drifted Faros URL, a consultancy estimate labelled "empirical telemetry", a METR result stated without its temporal bound, and a categorical "no net throughput improvement" sentence contradicted by its own next sentence — all in nodes the new source would have endorsed.
 - **Reference:** [Spotify Coding Constraint Assessment](/docs/assessments/2026-09-30-spotify-coding-constraint) (2026-10-01)
+
+### 10. Verify the Challenger's Own Citations Before Import
+- **Lesson:** Lesson 9 re-checks the incumbent's citations. Apply the same check to the challenger for every claim, term, or reference the KB would import.
+  - **Cited evidence:** confirm that the cited paper supports the claim as stated, not only that the paper exists.
+  - **Terms:** confirm whether the challenger coined each term. If the term already exists, check whether the challenger's definition conflicts with the KB's.
+  - **Publication status:** check what a DOI or "working paper" label actually points to.
+
+  A challenger that cites peer-reviewed work in good faith can still carry an overclaim, and the import step repeats it with the KB's authority. The OpenMOSS pass found three such problems:
+  - the essay cited Zheng et al. (2023) for a self-preference bias that Zheng et al. state they "cannot determine";
+  - it introduced "intent debt" and "comprehension debt" without citation, and its "intent debt" conflicts with Storey's definition used across the KB;
+  - its DOI resolves to a print of the blog post, not the working paper it mentions.
+- **Reference:** [OpenMOSS Organizational Intelligence Assessment](/docs/assessments/2026-10-06-openmoss-organizational-intelligence-claude) (2026-10-06)

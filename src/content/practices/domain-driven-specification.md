@@ -11,8 +11,8 @@ relatedIds:
   - patterns/context-map
   - patterns/adversarial-code-review
   - patterns/ralph-loop
-lastUpdated: 2026-10-05
-status: "Proposed"
+lastUpdated: 2026-10-07
+status: "Experimental"
 references:
   - type: "website"
     title: "How I Use Domain-Driven Design in AI-Assisted Software Delivery"
